@@ -8,11 +8,8 @@ order : 1
 description: Overview.
 ---
 
-KijiMR is the second major component in the Kiji ecosystem for Apache Hadoop and HBase after
-KijiSchema. KijiMR includes APIs to build MapReduce jobs that read and write data stored in Kiji
-tables. This allows the broad base of KijiSchema users to employ MapReduce-based techniques to
-develop many kinds of applications, including those using machine learning and other complex
-analytics.
+KijiMR allows KijiSchema users to employ MapReduce-based techniques to develop many kinds of
+applications, including those using machine learning and other complex analytics.
 
 KijiMR is organized around three core MapReduce job types: _Bulk Importers_, _Producers_ and
 _Gatherers_.
@@ -23,7 +20,7 @@ _Gatherers_.
    information and store it back in the entity's row. One typical use-case for producers is to
    generate new recommendations for a user based on the user's history.
  * _Gatherers_ provide flexible MapReduce computations that scan over Kiji table rows and output
-   key-value pairs. By using different outputs and reducers, Gatherers can export data in a variety
+   key-value pairs. By using different outputs and reducers, gatherers can export data in a variety
    of formats (such as text or Avro) or into other Kiji tables.
 
 Finally, KijiMR allows any of these jobs to combine the data they operate on with external
@@ -49,10 +46,7 @@ In the sections of this guide that follow, the core job types will be explained 
 Motiviation, example code snippets, and (where appropriate) a description of reference
 implementations in the KijiMR Library will be given for each. This guide also contains an in-depth
 description of how to use  _KeyValueStores_ to expose side-data stored in HDFS and Kiji through a
-consistent interface to your MapReduce jobs. For power users looking to implement flexible data
-transformations, we've included instructions on how to use the
-[`KijiMapReduceJobBuilder`]({{site.api_mr_rc4}}/KijiMapReduceJobBuilder.html) class and the `kiji
-mapreduce` command to build and launch arbitrary MapReduce jobs using Kiji mappers and reducers.
-Finally, this guide contains a description of the command line tools included with KijiMR and
-facilities that make it easier to test KijiMR application code.
+consistent interface to your MapReduce jobs. Finally, this guide contains a description of the
+command line tools included with KijiMR and facilities that make it easier to test KijiMR
+application code.
 
