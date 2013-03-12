@@ -44,7 +44,7 @@ In our `produce()` method, we then access our requested data through the [`KijiR
 
 {% highlight java %}
   String mostRecentSong = input.<CharSequence>getMostRecentValue("info", "track_plays")
-      .toString();// Avro strings get deserialized to CharSequences, so .toString() the result.
+      .toString();  // Avro strings get deserialized to CharSequences, so .toString() the result.
 {% endhighlight %}
 
 #### Join External Data Sources
@@ -124,7 +124,7 @@ withStore() method of JobBuilders.
 When we run this example, we again need to need specify which
 [`KijiTable`]({{site.api_schema_rc4}}/KijiTable.html) we want to use to back our
 KeyValueStore. This time, we will override the KeyValueStore binding from
-the command line using an XML configuration file (located at $KIJI_HOME/examples/music/KVStoreConfig.xml).
+the command line using an XML configuration file (located at ${KIJI_HOME}/examples/music/KVStoreConfig.xml).
 The contents of the file are displayed below. If you are not using BentoBox, you may need to modify this
 XML file so that the URI points to the songs table you would like to use.
 
@@ -153,11 +153,11 @@ Now, run the command:
 <div class="userinput">
 {% highlight bash %}
 kiji produce \
-      --producer=org.kiji.examples.music.produce.NextSongRecommender \
-      --input="format=kiji table=$KIJI/users" \
-      --output="format=kiji table=$KIJI/users nsplits=2" \
-      --lib=${LIBS_DIR} \
-      --kvstores=$MUSIC_HOME/KVStoreConfig.xml
+    --producer=org.kiji.examples.music.produce.NextSongRecommender \
+    --input="format=kiji table=${KIJI}/users" \
+    --output="format=kiji table=${KIJI}/users nsplits=2" \
+    --lib=${LIBS_DIR} \
+    --kvstores=${MUSIC_HOME}/KVStoreConfig.xml
 {% endhighlight %}
 </div>
 
@@ -168,7 +168,7 @@ and the KeyValueStores are specified by the KVStoreConfig.xml file.
 
 <div class="userinput">
 {% highlight bash %}
-kiji ls --kiji=$KIJI/users --columns=info:next_song_rec --max-rows=3
+kiji scan ${KIJI}/users/info:next_song_rec --max-rows=3
 {% endhighlight %}
 
 These are our recommendations for the next song to play for each user!

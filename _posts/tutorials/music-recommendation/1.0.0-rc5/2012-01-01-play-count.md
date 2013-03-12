@@ -215,11 +215,11 @@ local job runner. The resulting output sequence file is then validated.
 <div class="userinput">
 {% highlight bash %}
 kiji gather \
-      --gatherer=org.kiji.examples.music.gather.SongPlayCounter \
-      --reducer=org.kiji.mapreduce.lib.reduce.LongSumReducer \
-      --input="format=kiji table=${KIJI}/users" \
-      --output="format=text file=output.txt_file nsplits=2" \
-      --lib=${LIBS_DIR}
+    --gatherer=org.kiji.examples.music.gather.SongPlayCounter \
+    --reducer=org.kiji.mapreduce.lib.reduce.LongSumReducer \
+    --input="format=kiji table=${KIJI}/users" \
+    --output="format=text file=output.txt_file nsplits=2" \
+    --lib=${LIBS_DIR}
 {% endhighlight %}
 </div>
 

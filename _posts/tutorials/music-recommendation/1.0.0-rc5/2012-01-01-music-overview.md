@@ -48,7 +48,7 @@ echo "Hello Kiji"
 
     Hello Kiji
 
-* **Expandable Code** - Larger sections of code are marked with headers in gray boxes that contain a 
+* **Expandable Code** - Larger sections of code are marked with headers in gray boxes that contain a
 +. These can be expanded by clicking the header.
 
 <div id="accordion-container">

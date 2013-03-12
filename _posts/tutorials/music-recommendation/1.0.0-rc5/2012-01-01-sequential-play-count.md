@@ -34,7 +34,7 @@ The easiest way work with complex keys in Kiji is to use [Avro](http://avro.apac
 We define a `SongBiGram`, which will be our key, as a pair of songs played sequentially by a
 single user.
 
-{% highlight js %}
+{% highlight java %}
   /** Song play bigram. */
   record SongBiGram {
     /** The ID of the first song played in a sequence. */
@@ -128,9 +128,9 @@ while the second track ID becomes part the `SongCount` value.
     final SongBiGram songPair = key.datum();
 
     final SongCount nextSongCount = SongCount.newBuilder()
-         .setCount(sum)
-         .setSongId(songPair.getSecondSongPlayed())
-         .build();
+        .setCount(sum)
+        .setSongId(songPair.getSecondSongPlayed())
+        .build();
     // Write out result for this song.
     context.write(
         new AvroKey<CharSequence>(songPair.getFirstSongPlayed().toString()),
@@ -229,11 +229,11 @@ in a limited way using a KeyValueStoreReader.
 <div class="userinput">
 {% highlight bash %}
 kiji gather \
-      --gatherer=org.kiji.examples.music.gather.SequentialPlayCounter \
-      --reducer=org.kiji.examples.music.reduce.SequentialPlayCountReducer \
-      --input="format=kiji table=${KIJI}/users" \
-      --output="format=avrokv file=output.sequentialPlayCount nsplits=2" \
-      --lib=${LIBS_DIR}
+    --gatherer=org.kiji.examples.music.gather.SequentialPlayCounter \
+    --reducer=org.kiji.examples.music.reduce.SequentialPlayCountReducer \
+    --input="format=kiji table=${KIJI}/users" \
+    --output="format=avrokv file=output.sequentialPlayCount nsplits=2" \
+    --lib=${LIBS_DIR}
 {% endhighlight %}
 </div>
 

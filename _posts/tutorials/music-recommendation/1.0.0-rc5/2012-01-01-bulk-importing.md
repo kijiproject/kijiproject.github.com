@@ -66,7 +66,7 @@ record SongMetadata {
     string genre;
     long tempo;
     long duration;
-    }
+}
 {% endhighlight %}
 
 Then build an [Avro]({{site.userguide_mapreduce_rc4}}/working-with-avro) metadata record from the parsed JSON.
@@ -74,13 +74,13 @@ Then build an [Avro]({{site.userguide_mapreduce_rc4}}/working-with-avro) metadat
 
 {% highlight java %}
 final SongMetadata song = SongMetadata.newBuilder()
-      .setSongName(songName)
-      .setAlbumName(albumName)
-      .setArtistName(artistName)
-      .setGenre(genre)
-      .setTempo(tempo)
-      .setDuration(duration)
-      .build();
+    .setSongName(songName)
+    .setAlbumName(albumName)
+    .setArtistName(artistName)
+    .setGenre(genre)
+    .setTempo(tempo)
+    .setDuration(duration)
+    .build();
 {% endhighlight %}
 
 We create an [`EntityId`]({{site.api_schema_rc4}}/EntityId.html) object in order to use the song ID
@@ -126,7 +126,7 @@ Verify that the `user` table records were added properly by executing:
 
 <div class="userinput">
 {% highlight bash %}
-kiji ls --kiji=${KIJI}/songs --max-rows=3
+kiji scan ${KIJI}/songs --max-rows=3
 {% endhighlight %}
 </div>
 
@@ -161,7 +161,7 @@ descriptor, which is a JSON file containing:
 
 The import descriptor used for the `user` table is shown below:
 
-{% highlight bash %}
+{% highlight js %}
 {
   name : "users",
   families : [ {
@@ -194,7 +194,7 @@ Copy the descriptor file into HDFS.
 <div class="userinput">
 {% highlight bash %}
 $ hadoop fs -copyFromLocal \
-    $MUSIC_HOME/import/song-plays-import-descriptor.json \
+    ${MUSIC_HOME}/import/song-plays-import-descriptor.json \
     kiji-mr-tutorial/
 {% endhighlight %}
 </div>
@@ -219,7 +219,7 @@ Verify that the `user` table records were added properly by executing:
 
 <div class="userinput">
 {% highlight bash %}
-kiji ls --kiji=${KIJI}/users --max-rows=3
+kiji scan ${KIJI}/users --max-rows=3
 {% endhighlight %}
 </div>
 
