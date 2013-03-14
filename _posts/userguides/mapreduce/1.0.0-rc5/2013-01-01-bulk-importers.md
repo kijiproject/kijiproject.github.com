@@ -127,7 +127,7 @@ here, has already been created with the correct layout in the default Kiji insta
 {% highlight bash %}
 kiji bulk-import \
     --importer=my.application.package.BulkImporterExample \
-    --input="format=text file=hdfs://cluster/path/to/text-input-file \
+    --input="format=text file=hdfs://cluster/path/to/text-input-file" \
     --output="format=kiji table=kiji://.env/default/number_table nsplits=1" \
 {% endhighlight %}
 
