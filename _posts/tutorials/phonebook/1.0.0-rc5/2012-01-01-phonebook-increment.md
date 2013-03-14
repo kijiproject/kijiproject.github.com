@@ -113,7 +113,7 @@ $KIJI_HOME/bin/kiji jar \
 </div>
 
 #### Verify
-Now we can look up the derived talktime value from the stats column for the user John Doe using the `kiji ls` command:
+Now we can look up the derived talktime value from the stats column for the user John Doe using the `kiji get` command:
 
 <div class="userinput">
 {% highlight bash %}
