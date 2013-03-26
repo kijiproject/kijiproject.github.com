@@ -189,7 +189,7 @@ local job runner. The resulting output sequence file is then validated.
 
 {% highlight java %}
   final File outputDir = new File(getLocalTempDir(), "output.sequence_file");
-  final MapReduceJob mrjob = KijiGatherJobBuilder.create()
+  final KijiMapReduceJob mrjob = KijiGatherJobBuilder.create()
       .withConf(getConf())
       .withGatherer(SongPlayCounter.class)
       .withReducer(LongSumReducer.class)

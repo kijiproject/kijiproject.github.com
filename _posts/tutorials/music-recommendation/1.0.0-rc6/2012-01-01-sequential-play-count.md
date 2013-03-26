@@ -188,7 +188,7 @@ local job runner. The resulting output sequence file is then validated.
   // Configure and run job.
   final File outputDir = new File(getLocalTempDir(), "output.sequence_file");
   final Path path = new Path("file://" + outputDir);
-  final MapReduceJob mrjob = KijiGatherJobBuilder.create()
+  final KijiMapReduceJob mrjob = KijiGatherJobBuilder.create()
       .withConf(getConf())
       .withGatherer(SequentialPlayCounter.class)
       .withReducer(SequentialPlayCountReducer.class)

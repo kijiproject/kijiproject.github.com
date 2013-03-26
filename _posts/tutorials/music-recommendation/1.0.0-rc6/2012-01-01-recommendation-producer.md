@@ -114,7 +114,7 @@ withStore() method of JobBuilders.
   kvStoreBuilder.withColumn("info", "top_next_songs").withTable(mSongTableURI);
 
   // Configure first job.
-  final MapReduceJob mrjob = KijiProduceJobBuilder.create()
+  final KijiMapReduceJob mrjob = KijiProduceJobBuilder.create()
       .withStore("nextPlayed", kvStoreBuilder.build())
 
   // ...

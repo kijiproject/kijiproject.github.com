@@ -130,7 +130,7 @@ second job. Each of the jobs is configured using a job builder:
   final File outputDir = new File(getLocalTempDir(), "output.sequence_file");
   final Path path = new Path("file://" + outputDir);
   // Configure first job.
-  final MapReduceJob mrjob1 = KijiGatherJobBuilder.create()
+  final KijiMapReduceJob mrjob1 = KijiGatherJobBuilder.create()
       .withConf(getConf())
       .withGatherer(SequentialPlayCounter.class)
       .withReducer(SequentialPlayCountReducer.class)
@@ -140,7 +140,7 @@ second job. Each of the jobs is configured using a job builder:
       .build();
   // Configure second job.
   final MapReduceJobOutput tableOutput = new DirectKijiTableMapReduceJobOutput(mSongTableURI, 1);
-  final MapReduceJob mrjob2 = KijiMapReduceJobBuilder.create()
+  final KijiMapReduceJob mrjob2 = KijiMapReduceJobBuilder.create()
       .withConf(getConf())
       .withInput(new AvroKeyValueMapReduceJobInput(path))
       .withMapper(IdentityMapper.class)

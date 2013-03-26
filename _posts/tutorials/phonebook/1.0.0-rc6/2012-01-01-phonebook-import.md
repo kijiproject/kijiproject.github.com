@@ -145,10 +145,10 @@ The outer `PhonebookImporter` class contains `configureJob(...)` and `run(...)` 
 that handle the setup and execution
 of the MapReduce job.  Instead of constructing a Hadoop `Job` object directly, we use a
 `KijiBulkImportJobBuilder`. This builder object lets us specify Kiji-specific arguments,
-and construct a [`MapReduceJob`]({{site.api_mr_rc6}}/MapReduceJob.html) (A Kiji-specific wrapper around `Job`):
+and construct a [`KijiMapReduceJob`]({{site.api_mr_rc6}}/KijiMapReduceJob.html) (A Kiji-specific wrapper around `Job`):
 
 {% highlight java %}
-MapReduceJob configureJob(Path inputPath, KijiURI tableUri) throws IOException {
+KijiMapReduceJob configureJob(Path inputPath, KijiURI tableUri) throws IOException {
   return KijiBulkImportJobBuilder.create()
       .withConf(getConf())
       .withInput(new TextMapReduceJobInput(inputPath))
@@ -165,7 +165,7 @@ A [`KijiURI`]({{site.api_schema_1_0_0}}/KijiURI.html) is constructed that specif
 public int run(String[] args) throws Exception {
   final KijiURI tableUri =
       KijiURI.newBuilder(String.format("kiji://.env/default/%s", TABLE_NAME)).build();
-  final MapReduceJob job = configureJob(new Path(args[0]), tableUri);
+  final KijiMapReduceJob job = configureJob(new Path(args[0]), tableUri);
 }
 {% endhighlight %}
 
