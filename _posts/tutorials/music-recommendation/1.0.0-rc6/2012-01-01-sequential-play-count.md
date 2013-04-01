@@ -72,7 +72,7 @@ tally.
       nextSong = trackId;
       // If firstSong is null, we are at the beginning of the list and our sliding window
       // only contains one song, so don't output it. Otherwise...
-      if (null != nextSong) {
+      if (null != firstSong) {
         // Create the bigram of these two songs.
         mBiGram.setFirstSongPlayed(firstSong);
         mBiGram.setSecondSongPlayed(nextSong);
