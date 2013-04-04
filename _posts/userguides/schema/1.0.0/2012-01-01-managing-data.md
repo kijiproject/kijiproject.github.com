@@ -209,7 +209,7 @@ within the kiji-schema git project as follows:
 <div id="accordion-container">
   <h2 class="accordion-header"> Layout.avdl </h2>
   <div class="accordion-content">
-    <script src="http://gist-it.appspot.com/github/kijiproject/kiji-schema/raw/master/kiji-schema/src/main/avro/Layout.avdl"> </script>
+    <script src="http://gist-it.appspot.com/github/kijiproject/kiji-schema/raw/kiji-schema-root-1.0.0/kiji-schema/src/main/avro/Layout.avdl"> </script>
   </div>
 </div>
 
