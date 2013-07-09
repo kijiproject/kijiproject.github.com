@@ -31,7 +31,7 @@ and Kiji:
     {
      "kiji-client-data-version": {"majorVersion": 1, "minorVersion": 0, "revision": 0, "protocolName": "system"},
      "rest-version": "0.1.0",
-     "kiji-software-version": "0.1.0"
+     "kiji-software-version": "{{site.rest_devel_version}}"
     }
 
 ### Get Instances

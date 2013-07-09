@@ -25,7 +25,7 @@ If you are already running a Kiji BentoBox, you can skip this step.
 The KijiREST tarball can be found on the Kiji [Downloads](http://www.kiji.org/getstarted/#Downloads)
 page. Unpacked, the KijiREST contents are:
 
-    ~/kiji-rest-0.1.0$  ls .
+    ~/kiji-rest-{{site.rest_devel_version}}$  ls .
 
 <dl>
 <dt>  bin/ </dt>
@@ -36,7 +36,7 @@ page. Unpacked, the KijiREST contents are:
     <dd>API docs</dd>
 <dt>lib/ </dt>
     <dd>A placeholder directory of additional classpath jars (especially Avro classes)</dd>
-<dt>kiji-rest-0.1.0.jar  </dt>
+<dt>kiji-rest-{{site.rest_devel_version}}.jar  </dt>
     <dd>The KijiREST executable.</dd>
 <dt>README.md  </dt>
     <dd> A terse version of this document.</dd>
@@ -52,7 +52,7 @@ logging configurations).
 To configure and run KijiREST for your cluster and instance:
 
 1.  Start HBase and Hadoop with a configured Kiji environment. Make sure necessary Avro
-classes are accessible either in `$KIJI_CLASSPATH` or in the `kiji-rest-0.1.0/lib/` directory.
+classes are accessible either in `$KIJI_CLASSPATH` or in the `kiji-rest-{{site.rest_devel_version}}/lib/` directory.
 
     If you are running a BentoBox, you can start Hadoop and HBase with `start bento`.
 
@@ -69,14 +69,14 @@ service, for example default, prod_instance, dev_instance:
 
 1.  Start KijiREST.
 
-        ~/kiji-rest-0.1.0$  ./bin/kiji-rest
+        ~/kiji-rest-{{site.rest_devel_version}}$  ./bin/kiji-rest
 
 The vanilla `configuration.yml` file sets up the REST service through port 8080 and writes
 all logs to the `kiji-rest/logs` directory. The process will run in the background.
 
 You can find the process ID in the `kiji-rest.pid` file:
 
-    ~/kiji-rest-0.1.0$  cat kiji-rest.pid
+    ~/kiji-rest-{{site.rest_devel_version}}$  cat kiji-rest.pid
     1234
 
 ### Get Instance Status
@@ -118,8 +118,8 @@ described for development systems.
 
 1. Unpack the `kiji-rest` tarball as the `/opt/kiji/kiji-rest directory`:
 
-        $ tar -xvzf kiji-rest-0.1.0-release.tar.gz -C /opt/kiji/
-        $ ln -s kiji-rest-0.1.0 kiji-rest
+        $ tar -xvzf kiji-rest-{{site.rest_devel_version}}-release.tar.gz -C /opt/kiji/
+        $ ln -s kiji-rest-{{site.rest_devel_version}} kiji-rest
 
     The KijiREST package includes KijiSchema libraries need to be able to access Kiji tables.
 
