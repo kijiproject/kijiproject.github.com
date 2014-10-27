@@ -64,7 +64,7 @@ title: Documentation
 <div class="row-fluid home-box">
  
   <div class="span3">
-    <a href="http://www.kiji.org/getting-started-with-maven-2014-2/" class="boxlink">
+    <a href="http://www.kiji.org/getting-started-with-maven/" class="boxlink">
       <div class="well">
         <div class="large-number">5</div>
         <div class="title">Getting Started with Maven</div>
